@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <!-- SEO Meta -->
+    <title>Foot Stabber ($FTS) – United by pain, powered by laughs</title>
+    <meta name="description" content="Foot Stabber is the meme coin born from stepping on bricks. 0% tax, locked liquidity, 1B supply. Join the community of shared pain and nostalgia.">
+    <meta name="keywords" content="Foot Stabber, FTS, meme coin, solana, crypto, community, 0 tax, locked liquidity, brick, pain">
+    <meta name="author" content="Foot Stabber community">
+    <!-- Open Graph (social preview) -->
+    <meta property="og:title" content="Foot Stabber ($FTS) – United by pain, powered by laughs">
+    <meta property="og:description" content="The meme coin born from life's universal betrayal – stepping on that tiny brick. 1B supply, 0% tax, locked liquidity.">
+    <meta property="og:image" content="fts.png">
+    <meta property="og:url" content="https://footstabber.fun">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Fonts: Bangers + Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free) for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧱</text></svg>">
+    <style>
+        /* ---------- RESET & VARIABLES ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg: #0F0F0F;
+            --accent: #E10600;
+            --accent-dark: #b00400;
+            --secondary: #BFBFBF;
+            --text: #FFFFFF;
+            --card-bg: #1a1a1a;
+            --border-glow: 0 0 10px rgba(225, 6, 0, 0.3);
+            --font-heading: 'Bangers', cursive;
+            --font-body: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        a {
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        /* ---------- TYPOGRAPHY ---------- */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; }
+        h2 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 1.5rem; border-left: 6px solid var(--accent); padding-left: 1rem; }
+        h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--accent); }
+        p { margin-bottom: 1rem; font-weight: 400; color: var(--secondary); }
+        .text-accent { color: var(--accent); }
+        .text-small { font-size: 0.85rem; }
+
+        /* ---------- BUTTONS & CARDS ---------- */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 0 #7a0300;
+            text-transform: uppercase;
+        }
+        .btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #7a0300;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid #2a2a2a;
+            transition: 0.2s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--border-glow);
+        }
+
+        /* ---------- LAYOUT ---------- */
+        .grid-2, .grid-3, .grid-4 {
+            display: grid;
+            gap: 2rem;
+        }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #222;
+        }
+
+        /* ---------- HEADER (no social icons) ---------- */
+        header {
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            background: rgba(15,15,15,0.95);
+            backdrop-filter: blur(8px);
+            z-index: 40;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px var(--accent));
+            border-radius: 50%; /* rounded logo */
+        }
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        /* no social links in header */
+
+        /* ---------- HERO ---------- */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1 1 400px;
+        }
+        .hero-image {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            width: 300px;
+            filter: drop-shadow(0 0 20px var(--accent));
+            border-radius: 30px;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        /* CA box removed from hero */
+
+        /* ---------- ROADMAP ---------- */
+        .phase {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 1.5rem;
+            border-top: 4px solid var(--accent);
+            height: 100%;
+        }
+        .phase h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        .phase ul {
+            list-style-type: none;
+        }
+        .phase li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--secondary);
+        }
+        .phase li::before {
+            content: "🧱";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* ---------- TOKENOMICS ---------- */
+        .token-item {
+            background: rgba(225,6,0,0.05);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .token-item h3 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        .ca-box {
+            background: #111;
+            border-radius: 60px;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border: 1px solid var(--accent);
+            margin-top: 2rem;
+        }
+        .ca-address {
+            font-family: monospace;
+            font-size: 1.1rem;
+            word-break: break-all;
+            color: var(--secondary);
+        }
+        .copy-btn {
+            background: var(--accent);
+            border: none;
+            color: white;
+            padding: 0.5rem 1.8rem;
+            border-radius: 40px;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 3px 0 #7a0300;
+        }
+
+        /* ---------- CHART IFRAME ---------- */
+        .chart-container {
+            background: #0a0a0a;
+            border-radius: 30px;
+            padding: 1rem;
+            border: 1px solid var(--accent);
+            box-shadow: var(--border-glow);
+        }
+        .chart-iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        /* ---------- SOCIAL SECTION (above footer) ---------- */
+        .social-section {
+            padding: 3rem 0 2rem;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+        .social-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .social-icons a {
+            background: #222;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            transition: 0.2s;
+            border: 2px solid transparent;
+        }
+        .social-icons a:hover {
+            background: var(--accent);
+            border-color: white;
+            transform: scale(1.1);
+        }
+        .social-icons a i {
+            color: white;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: #555;
+        }
+
+        /* ---------- CHATBOT TOGGLE ---------- */
+        .chat-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 100;
+            background: var(--accent);
+            border: none;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            box-shadow: 0 8px 0 #7a0300, 0 8px 20px black;
+            transition: 0.1s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .chat-toggle:active {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #7a0300, 0 8px 20px black;
+        }
+        .chat-window {
+            position: fixed;
+            bottom: 110px;
+            right: 25px;
+            width: 350px;
+            max-width: 90vw;
+            height: 500px;
+            background: #1c1c1c;
+            border-radius: 30px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 99;
+            transition: transform 0.3s ease, opacity 0.3s;
+            transform-origin: bottom right;
+        }
+        .chat-window.closed {
+            transform: scale(0);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .chat-header {
+            background: var(--accent);
+            padding: 1rem;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .message {
+            max-width: 85%;
+            padding: 0.7rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            word-wrap: break-word;
+        }
+        .user-message {
+            align-self: flex-end;
+            background: var(--accent);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        .bot-message {
+            align-self: flex-start;
+            background: #2a2a2a;
+            color: var(--secondary);
+            border-bottom-left-radius: 4px;
+            border: 1px solid #3a3a3a;
+        }
+        .chat-input-area {
+            display: flex;
+            padding: 0.8rem;
+            background: #111;
+            border-top: 1px solid #333;
+        }
+        .chat-input-area input {
+            flex: 1;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 40px;
+            padding: 0.7rem 1.2rem;
+            color: white;
+            outline: none;
+        }
+        .chat-input-area button {
+            background: var(--accent);
+            border: none;
+            border-radius: 40px;
+            padding: 0.7rem 1.5rem;
+            margin-left: 0.5rem;
+            color: white;
+            font-family: var(--font-heading);
+            cursor: pointer;
+        }
+        .suggested {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+        .suggested button {
+            background: #2a2a2a;
+            border: 1px solid var(--accent);
+            color: var(--secondary);
+            border-radius: 30px;
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 600px) {
+            h2 { font-size: 2.2rem; }
+            .header-flex { flex-direction: column; gap: 1rem; }
+            .chat-window { width: 90vw; right: 5vw; }
+        }
+    </style>
+</head>
+<body>
+    <!-- STICKY HEADER (no social icons) -->
+    <header>
+        <div class="container header-flex">
+            <div class="logo-area">
+                <img src="fts.png" alt="Foot Stabber Logo" class="logo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧱🔪</text></svg>'">
+                <span class="logo-text">FootStabber $FTS</span>
+            </div>
+            <!-- no social links here -->
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION (no CA, no chart button) -->
+        <section>
+            <div class="container hero">
+                <div class="hero-content">
+                    <h1>FOOT <span class="text-accent">STABBER</span></h1>
+                    <p class="text-large">United by pain. Powered by laughs. Born from that one brick you stepped on at 2AM.</p>
+                    <p>No promises. No overthinking. Just pure community humor around shared trauma. <strong>$FTS</strong> — 1B tiny landmines, 0% tax, locked liquidity.</p>
+                    <div class="hero-buttons">
+                        <a href="https://pump.fun/coin/E6tBfgKTVCZ3ziP2ZB5V1acDZu6mwA6Ho4jVPVg3pump" class="btn" target="_blank">BUY $FTS</a>
+                        <!-- Live chart button removed -->
+                    </div>
+                    <!-- CA box removed from hero -->
+                </div>
+                <div class="hero-image">
+                    <img src="fts.png" alt="Foot Stabber mascot" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧱🔪</text></svg>'">
+                </div>
+            </div>
+        </section>
+
+        <!-- NARRATIVE / ABOUT -->
+        <section>
+            <div class="container">
+                <h2>🩹 THE PAIN WE SHARE</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>🧱 ODE TO THE BRICK</h3>
+                        <p>Foot Stabber is born from life's most universal betrayal — stepping on that tiny brick left on the floor. It's the late-night screams, the dramatic hopping, and the silent revenge plans against innocent kids.</p>
+                        <p>We've all felt it. Now we own it. <strong>$FTS</strong> — United by pain, powered by laughs.</p>
+                    </div>
+                    <div class="card">
+                        <h3>👣 COMMUNITY FIRST</h3>
+                        <p>No hidden minting. No surprise inflation. Pure community-driven chaos. Marketing, meme pushes, and big moves guided by community voting. If you’ve felt the pain, you have a voice.</p>
+                        <p><span class="text-accent">1B fixed supply · 0% tax · locked liquidity · strategic burns</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROADMAP -->
+        <section id="roadmap">
+            <div class="container">
+                <h2>🧱 FOOT STABBER ROADMAP</h2>
+                <div class="grid-4">
+                    <div class="phase">
+                        <h4>🩹 Phase 1<br>The First Step</h4>
+                        <ul>
+                            <li>Launch $FTS token</li>
+                            <li>Community building (X & Telegram)</li>
+                            <li>Meme contests & Pain Stories</li>
+                            <li>Website launch</li>
+                            <li>Initial liquidity locked</li>
+                            <li>Coin tracking listings</li>
+                        </ul>
+                    </div>
+                    <div class="phase">
+                        <h4>🦶 Phase 2<br>The Night Walk</h4>
+                        <ul>
+                            <li>Influencer collabs</li>
+                            <li>CMC & CG applications</li>
+                            <li>Sticker & GIF packs</li>
+                            <li>Limited meme NFTs</li>
+                            <li>Charity poll (kids… they caused this)</li>
+                        </ul>
+                    </div>
+                    <div class="phase">
+                        <h4>🔥 Phase 3<br>The Revenge Arc</h4>
+                        <ul>
+                            <li>Branded merch (slippers, socks, signs)</li>
+                            <li>Strategic exchange listings</li>
+                            <li>Meme animation shorts</li>
+                            <li>Community governance polls</li>
+                            <li>Partnerships with other memes</li>
+                        </ul>
+                    </div>
+                    <div class="phase">
+                        <h4>🏆 Phase 4<br>The Legendary Brick</h4>
+                        <ul>
+                            <li>Foot Stabber mini mobile game</li>
+                            <li>Global meme competitions</li>
+                            <li>Real-world / online summit</li>
+                            <li>Long-term treasury</li>
+                            <li>Cross-chain expansion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOKENOMICS (CA box kept here) -->
+        <section>
+            <div class="container">
+                <h2>💎 TOKENOMICS</h2>
+                <div class="grid-3">
+                    <div class="token-item">
+                        <h3>1B</h3>
+                        <p>Fixed total supply<br>No hidden minting</p>
+                    </div>
+                    <div class="token-item">
+                        <h3>0%</h3>
+                        <p>Buy & sell tax<br>Pure chaos</p>
+                    </div>
+                    <div class="token-item">
+                        <h3>🔥</h3>
+                        <p>Strategic burns tied to milestones</p>
+                    </div>
+                    <div class="token-item">
+                        <h3>🔒</h3>
+                        <p>Liquidity locked – no rug</p>
+                    </div>
+                    <div class="token-item">
+                        <h3>🗳️</h3>
+                        <p>Community governed</p>
+                    </div>
+                    <div class="token-item">
+                        <h3>🧱</h3>
+                        <p>1B tiny landmines</p>
+                    </div>
+                </div>
+                <!-- CA box remains -->
+                <div class="ca-box">
+                    <span class="ca-address" id="contractAddress">E6tBfgKTVCZ3ziP2ZB5V1acDZu6mwA6Ho4jVPVg3pump</span>
+                    <button class="copy-btn" id="copyCaBtn">COPY CA</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE CHART (Dexscreener embed) -->
+        <section id="chart">
+            <div class="container">
+                <h2>📈 LIVE CHART – $FTS / SOL</h2>
+                <div class="chart-container">
+                    <iframe class="chart-iframe" src="https://dexscreener.com/solana/6yzW8z85qr3RKeCPuyuFVtES834gJVcWGgVLg55tzXNE?embed=1" title="Dexscreener chart for FTS"></iframe>
+                </div>
+                <p style="text-align:center; margin-top:1rem"><a href="https://dexscreener.com/solana/6yzW8z85qr3RKeCPuyuFVtES834gJVcWGgVLg55tzXNE" target="_blank" class="text-accent">Open full chart ↗</a></p>
+            </div>
+        </section>
+
+        <!-- SOCIAL SECTION (above footer) with real icons -->
+        <div class="social-section">
+            <div class="container">
+                <h3>Join the Pain Community</h3>
+                <div class="social-icons">
+                    <a href="https://t.me/y9BiyjXu06oyZmJh" target="_blank" rel="noopener" aria-label="Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                    <a href="https://x.com/stabber_s?s=21" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <!-- Optionally you could add Dexscreener as a link but not as social per instruction; keeping only Telegram and X -->
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <p>© 2026 Foot Stabber. Every step counts. </p>
+                <p>#UnitedByPain #FTS</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- CHATBOT TOGGLE BUTTON & WINDOW -->
+    <button class="chat-toggle" id="chatToggle" aria-label="Toggle chat">💬</button>
+    <div class="chat-window closed" id="chatWindow">
+        <div class="chat-header">
+            <span>🧱 FTS Bot</span>
+            <button class="chat-close" id="chatClose">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">👣 Ouch! Ask me anything about Foot Stabber. (try "what is $FTS?", "supply?", "tax?", "roadmap")</div>
+        </div>
+        <div class="suggested" id="suggestedQs">
+            <button>What is $FTS?</button>
+            <button>Total supply?</button>
+            <button>Tax?</button>
+            <button>How to buy?</button>
+            <button>Roadmap?</button>
+            <button>Contract address</button>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your pain..." />
+            <button id="sendMsg">Send</button>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ---------- COPY CA FUNCTIONALITY ----------
+            const caText = "E6tBfgKTVCZ3ziP2ZB5V1acDZu6mwA6Ho4jVPVg3pump";
+            const copyButton = document.getElementById('copyCaBtn');
+            if (copyButton) {
+                copyButton.addEventListener('click', async () => {
+                    try {
+                        await navigator.clipboard.writeText(caText);
+                        const originalText = copyButton.textContent;
+                        copyButton.textContent = '✅ COPIED!';
+                        setTimeout(() => { copyButton.textContent = originalText; }, 1500);
+                    } catch (err) {
+                        alert('Press Ctrl+C to copy: ' + caText);
+                    }
+                });
+            }
+
+            // ---------- CHATBOT TOGGLE ----------
+            const toggleBtn = document.getElementById('chatToggle');
+            const chatWindow = document.getElementById('chatWindow');
+            const closeBtn = document.getElementById('chatClose');
+
+            function openChat() {
+                chatWindow.classList.remove('closed');
+            }
+            function closeChat() {
+                chatWindow.classList.add('closed');
+            }
+            toggleBtn.addEventListener('click', openChat);
+            closeBtn.addEventListener('click', closeChat);
+
+            // ---------- CHATBOT LOGIC ----------
+            const messagesDiv = document.getElementById('chatMessages');
+            const inputField = document.getElementById('chatInput');
+            const sendBtn = document.getElementById('sendMsg');
+            const suggestBtns = document.querySelectorAll('#suggestedQs button');
+
+            // Knowledge base updated to $FTS
+            const answers = {
+                'what is foot stabber': "Foot Stabber ($FTS) is a meme coin born from stepping on bricks. It's a community united by shared pain, with 0% tax, locked liquidity, and 1B supply. No promises, just laughs.",
+                'what is $fts': "Foot Stabber ($FTS) is a meme coin born from stepping on bricks. It's a community united by shared pain, with 0% tax, locked liquidity, and 1B supply. No promises, just laughs.",
+                'total supply': "Total fixed supply is 1,000,000,000 $FTS. No hidden minting. One billion tiny landmines.",
+                'supply': "Total fixed supply is 1,000,000,000 $FTS. No hidden minting.",
+                'tax': "0% tax on buys and sells. Pure community-driven chaos.",
+                'buy tax': "0% tax on buys and sells. Pure community-driven chaos.",
+                'how to buy': "You can buy $FTS on pump.fun using this link: https://pump.fun/coin/E6tBfgKTVCZ3ziP2ZB5V1acDZu6mwA6Ho4jVPVg3pump. Make sure you have SOL.",
+                'buy': "You can buy $FTS on pump.fun using this link: https://pump.fun/coin/E6tBfgKTVCZ3ziP2ZB5V1acDZu6mwA6Ho4jVPVg3pump. Make sure you have SOL.",
+                'contract address': "The contract address (CA) is: E6tBfgKTVCZ3ziP2ZB5V1acDZu6mwA6Ho4jVPVg3pump",
+                'ca': "The contract address (CA) is: E6tBfgKTVCZ3ziP2ZB5V1acDZu6mwA6Ho4jVPVg3pump",
+                'roadmap': "Phase 1: Foundation (launch, community). Phase 2: Growth (influencers, CMC, charity). Phase 3: Expansion (merch, listings, governance). Phase 4: Longevity (game, global events). Full details on site.",
+                'liquidity': "Liquidity is locked for long-term stability. No rug pulls.",
+                'locked liquidity': "Yes, liquidity is locked. Trust.",
+                'burn': "Yes, strategic burns tied to milestones, partnerships, and community growth. Less supply, more scarcity.",
+                'community': "Join our Telegram (https://t.me/y9BiyjXu06oyZmJh) and X (https://x.com/stabber_s). Community votes guide everything.",
+                'telegram': "Telegram: https://t.me/y9BiyjXu06oyZmJh",
+                'twitter': "X (Twitter): https://x.com/stabber_s",
+                'x': "X (Twitter): https://x.com/stabber_s",
+                'chart': "Live chart: https://dexscreener.com/solana/6yzW8z85qr3RKeCPuyuFVtES834gJVcWGgVLg55tzXNE",
+                'dexscreener': "Dexscreener: https://dexscreener.com/solana/6yzW8z85qr3RKeCPuyuFVtES834gJVcWGgVLg55tzXNE",
+                'who created': "Foot Stabber is a community-powered meme coin. No single leader — just shared pain and laughs.",
+                'pain': "We've all stepped on a brick. That's the pain that unites us. Now we own it with $FTS.",
+            };
+
+            function addMessage(text, sender) {
+                const msgDiv = document.createElement('div');
+                msgDiv.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+                msgDiv.textContent = text;
+                messagesDiv.appendChild(msgDiv);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+
+            function getBotResponse(userInput) {
+                const lower = userInput.toLowerCase().trim();
+                for (let key in answers) {
+                    if (lower.includes(key)) {
+                        return answers[key];
+                    }
+                }
+                if (lower.includes('fts') || lower.includes('coin')) return answers['what is $fts'];
+                if (lower.includes('supply') || lower.includes('billion')) return answers['supply'];
+                if (lower.includes('tax') || lower.includes('fee')) return answers['tax'];
+                if (lower.includes('buy') || lower.includes('purchase')) return answers['buy'];
+                if (lower.includes('ca') || lower.includes('contract') || lower.includes('address')) return answers['contract address'];
+                if (lower.includes('roadmap') || lower.includes('phase')) return answers['roadmap'];
+                if (lower.includes('liquid')) return answers['liquidity'];
+                if (lower.includes('burn')) return answers['burn'];
+                if (lower.includes('telegram') || lower.includes('tg')) return answers['telegram'];
+                if (lower.includes('twitter') || lower.includes('x.com')) return answers['twitter'];
+                if (lower.includes('chart') || lower.includes('dexscreener')) return answers['chart'];
+                return "🧱 I only know about Foot Stabber. Try asking: 'what is $FTS?', 'supply?', 'tax?', 'roadmap?', 'contract address', 'buy', 'community'.";
+            }
+
+            function handleUserMessage() {
+                const text = inputField.value.trim();
+                if (!text) return;
+                addMessage(text, 'user');
+                inputField.value = '';
+                setTimeout(() => {
+                    const reply = getBotResponse(text);
+                    addMessage(reply, 'bot');
+                }, 300);
+            }
+
+            sendBtn.addEventListener('click', handleUserMessage);
+            inputField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleUserMessage();
+            });
+
+            suggestBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const question = btn.textContent;
+                    addMessage(question, 'user');
+                    setTimeout(() => {
+                        const reply = getBotResponse(question);
+                        addMessage(reply, 'bot');
+                    }, 300);
+                });
+            });
+        })();
+    </script>
+    <!-- additional SEO meta -->
+    <meta property="og:locale" content="en_US">
+</body>
+  </html>
